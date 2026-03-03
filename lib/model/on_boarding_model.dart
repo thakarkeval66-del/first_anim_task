@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class OnboardingData {
   final Color backgroundColor;
   final Color questionTextColor;

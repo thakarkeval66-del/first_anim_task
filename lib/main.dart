@@ -59,6 +59,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       detail: 'We charge zero\ncommission on\nyour sales.',
       showSkip: false,
     ),
+
     OnboardingData(
       backgroundColor: const Color(0xFF2980B9),
       questionTextColor: const Color(0xFF05283F),
@@ -66,6 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'Always.',
       detail: 'Payments are\nsecure and\non-time,\nevery time.',
     ),
+
     OnboardingData(
       backgroundColor: const Color(0xFF9B59B6),
       questionTextColor: const Color(0xFF280337),
@@ -73,6 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'Yes!',
       detail: 'We deliver to\n20,000+ pin codes\nacross India.',
     ),
+
     OnboardingData(
       backgroundColor: const Color(0xFFE67E22),
       questionTextColor: const Color(0xFF47260A),
@@ -80,6 +83,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'No worries',
       detail: 'offline exposure is\npart of the plan.',
     ),
+
     OnboardingData(
       backgroundColor: const Color(0xFFE74C3C),
       questionTextColor: const Color(0xFF4B0C05),
@@ -113,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     throw UnimplementedError();
   }
 
