@@ -45,8 +45,6 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
-
-    // TODO: implement build
     throw UnimplementedError();
   }
 }
