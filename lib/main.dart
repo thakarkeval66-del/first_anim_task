@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:first_anim_task/widget/on_boarding_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:first_anim_task/model/on_boarding_model.dart';
@@ -116,9 +117,65 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void dispose() {
+    _timer?.cancel();
+    _pageController.dispose();
+    super.dispose();
+  }
 
-    throw UnimplementedError();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView.builder(
+            controller: _pageController,
+            scrollDirection: Axis.vertical,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPage = index;
+              });
+              _startTimer();
+            },
+            itemCount: _pages.length,
+            itemBuilder: (context, index) {
+              return OnboardingPage(
+                key: ValueKey(index),
+                data: _pages[index],
+                isFirstPage: index == 0,
+                twoLine:index>2?true:false,
+              );
+            },
+          ),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeOutCubic,
+            top: 55,
+            right: _pages[_currentPage].showSkip ? 25 : -100,
+            child: Container(
+              width: 69,
+              height: 34,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: const Color(0x33FFFFFF),
+                borderRadius: BorderRadius.circular(123),
+              ),
+              padding: const EdgeInsets.only(top: 8, right: 16, bottom: 8, left: 16),
+              child: Text(
+                'SKIP',
+                style: GoogleFonts.lexend(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  height: 1.0,
+                  letterSpacing: 0,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
 }
