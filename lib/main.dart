@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:first_anim_task/widget/on_boarding_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:first_anim_task/model/on_boarding_model.dart';
+import 'package:first_anim_task/widget/on_boarding_page_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,34 +11,21 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Anim Task Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-       brightness: Brightness.light,
+        brightness: Brightness.light,
         textTheme: GoogleFonts.lexendTextTheme(),
-        ),
+      ),
       home: const OnboardingScreen(),
     );
   }
 }
+
+
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -46,6 +33,7 @@ class OnboardingScreen extends StatefulWidget {
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
+
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
@@ -60,7 +48,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       detail: 'We charge zero\ncommission on\nyour sales.',
       showSkip: false,
     ),
-
     OnboardingData(
       backgroundColor: const Color(0xFF2980B9),
       questionTextColor: const Color(0xFF05283F),
@@ -68,7 +55,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'Always.',
       detail: 'Payments are\nsecure and\non-time,\nevery time.',
     ),
-
     OnboardingData(
       backgroundColor: const Color(0xFF9B59B6),
       questionTextColor: const Color(0xFF280337),
@@ -76,7 +62,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'Yes!',
       detail: 'We deliver to\n20,000+ pin codes\nacross India.',
     ),
-
     OnboardingData(
       backgroundColor: const Color(0xFFE67E22),
       questionTextColor: const Color(0xFF47260A),
@@ -84,7 +69,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       answer: 'No worries',
       detail: 'offline exposure is\npart of the plan.',
     ),
-
     OnboardingData(
       backgroundColor: const Color(0xFFE74C3C),
       questionTextColor: const Color(0xFF4B0C05),
@@ -93,6 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       detail: 'you get fewer\nreturns and\nmore profit.',
     ),
   ];
+
   @override
   void initState() {
     super.initState();
@@ -177,5 +162,4 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
-
 }
